@@ -5,16 +5,15 @@ import CharacterCard from "./components/characterCard";
 
 const CharactersView = () => {
   const { loading, characters, getCharacters } = useCharactersState();
-  const { width } = useWindowDimensions(); // obtener el ancho de la pantalla
-
+  const { width } = useWindowDimensions(); 
   useEffect(() => {
     getCharacters(1);
   }, []);
 
-  // Ajuste del número de columnas dependiendo del ancho de la pantalla
-  const isLargeScreen = width > 1024; // Pantallas grandes como escritorio
-  const isTablet = width > 768 && width <= 1024; // Pantallas medianas (tablets)
-  const numColumns = isLargeScreen ? 3 : isTablet ? 2 : 1; // 3 columnas en escritorio, 2 en tablet, 1 en móvil
+  
+  const isLargeScreen = width > 1024; 
+  const isTablet = width > 768 && width <= 1024; 
+  const numColumns = isLargeScreen ? 3 : isTablet ? 2 : 1;
 
   const renderCharacters = () => (
     <View style={[styles.gridContainer, { flexDirection: numColumns > 1 ? "row" : "column" }]}>
@@ -58,10 +57,10 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-between",
     padding: 10,
-    backgroundColor: "#2c2c2c", // Fondo gris oscuro
-    paddingTop: Platform.OS === 'android' ? 40 : 20, // Aumenta el padding superior para dispositivos móviles
+    backgroundColor: "#2c2c2c", 
+    paddingTop: Platform.OS === 'android' ? 40 : 20,
   },
   cardWrapper: {
-    marginBottom: 20, // Espacio entre las tarjetas
+    marginBottom: 20, 
   },
 });

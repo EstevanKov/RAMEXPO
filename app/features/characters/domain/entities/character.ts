@@ -12,7 +12,7 @@ class Character {
     origin: CharacterLocation;
     location: CharacterLocation;
     image: string;
-    episodes: LastSeenCharacter; // Ajusta aquí el nombre
+    episodes: LastSeenCharacter; 
     url: string;       
     created: string;  
 
@@ -26,7 +26,7 @@ class Character {
         origin: CharacterLocation,
         location: CharacterLocation,
         image: string,
-        episodes: LastSeenCharacter, // Ajusta aquí el nombre
+        episodes: LastSeenCharacter, 
         url: string,
         created: string
     ) {
@@ -39,7 +39,7 @@ class Character {
         this.origin = origin;
         this.location = location;
         this.image = image;
-        this.episodes = episodes; // Ajusta aquí el nombre
+        this.episodes = episodes;
         this.url = url;
         this.created = created;
     }

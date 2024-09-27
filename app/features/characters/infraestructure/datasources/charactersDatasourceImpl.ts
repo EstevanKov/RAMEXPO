@@ -10,13 +10,11 @@ class CharactersDatasourceImp extends CharactersDatasource {
             .then((response) => response.json())
             .then((response) => {
                 const characterPromises = response.results.map((item: any) => {
-                    // Obtener los nombres de los episodios
                     const episodePromises = item.episode.map((ep: string) => 
                         fetch(ep).then(res => res.json())
                     );
 
                     return Promise.all(episodePromises).then(episodes => {
-                        // Extraer solo el nombre del último episodio visto
                         const lastEpisodeName = episodes.length > 0 ? episodes[episodes.length - 1].name : "Desconocido";
 
                         return new Character(
@@ -35,14 +33,14 @@ class CharactersDatasourceImp extends CharactersDatasource {
                                 item.location.url,
                             ),
                             item.image,
-                            new LastSeenCharacter([lastEpisodeName]), // Aquí se guarda el nombre
+                            new LastSeenCharacter([lastEpisodeName]), 
                             item.url,     
                             item.created   
                         );
                     });
                 });
 
-                // Esperar a que se resuelvan todas las promesas
+               
                 return Promise.all(characterPromises).then(characters => {
                     return new CharactersResults(
                         response.info.count,
