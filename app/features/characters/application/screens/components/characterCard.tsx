@@ -45,7 +45,9 @@ export default function CharacterCard({ character }: Props) {
 
         <View style={styles.infoDetails}>
           <Text style={styles.label}>Último Episodio Visto:</Text>
-          <Text style={styles.text}>{character.episode.name}</Text>
+          <Text style={styles.text}>
+            {character.episodes.names.length > 0 ? character.episodes.names[0] : "Desconocido"}
+          </Text>
         </View>
       </View>
     </View>

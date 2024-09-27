@@ -1,11 +1,9 @@
-class lastSeenCharacter {
-    name: string;
-    
+class LastSeenCharacter {
+    names: string[];
 
-    constructor(name:string){
-        this.name =name;
-       
+    constructor(names: string[]) {
+        this.names = names;
     }
 }
 
-export default lastSeenCharacter;
+export default LastSeenCharacter;
