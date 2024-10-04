@@ -5,7 +5,7 @@ import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function TabLayout() {
+/*export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
@@ -34,4 +34,13 @@ export default function TabLayout() {
       />
     </Tabs>
   );
+}*/
+
+
+import CharactersScreen from '../features/characters/application/screens/charactersScreen'; 
+import LoginScreen from '../features/login';
+
+export default function App() {
+  return <LoginScreen/>
+  /*return <CharactersScreen />;*/
 }

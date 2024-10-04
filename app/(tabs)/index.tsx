@@ -1,5 +1,5 @@
 
-/*import { Image, StyleSheet, Platform, ScrollView,View } from 'react-native';
+import { Image, StyleSheet, Platform, ScrollView,View } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -69,10 +69,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 });
-*/
 
-import CharactersScreen from '../features/characters/application/screens/charactersScreen'; 
 
-export default function App() {
-  return <CharactersScreen />;
-}
+
